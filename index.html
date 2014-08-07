@@ -12,28 +12,25 @@
       	
       	var $body = $('body');
         //$body.html('');
+        var last = -1;
+        var displayNewTweets = function() {
+        	var index = streams.home.length-1;
+        	var holder = index;
+        	while(index > last){
+        		var tweet = streams.home[index];
+        		var $tweet = $('<div></div>');
+        		$tweet.text('@' + tweet.user + ': ' + tweet.message);
+        		$tweet.appendTo($body);
+        		index-=1;
+        	}
+        	last = holder;
+        };
         
-        var index = streams.home.length - 1;
-        var last = index;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
-        
+        var last = -1;
+        displayNewTweets();
+                
         $('button').on('click', function() {
-        	var num = streams.home.length - 1;
-        	var holder = num;
-        	while(num >= last){
-        		var tweet = streams.home[num];
-          		var $tweet = $('<div></div>');
-          		$tweet.text('@' + tweet.user + ': ' + tweet.message);
-          		$tweet.appendTo($body);
-          		num -= 1;
-          	}
-          	last = holder;
+        	displayNewTweets();
         });
 
       });
