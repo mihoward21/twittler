@@ -12,21 +12,18 @@
       	
       	var $body = $('body');
         //$body.html('');
-        var last = -1;
         var displayNewTweets = function() {
-        	var index = streams.home.length-1;
-        	var holder = index;
-        	while(index > last){
+        	last = streams.home.length;
+        	while(index < last){
         		var tweet = streams.home[index];
         		var $tweet = $('<div></div>');
-        		$tweet.text('@' + tweet.user + ': ' + tweet.message);
+        		$tweet.text('@' + tweet.user + ': ' + tweet.message + ' (' + tweet.created_at + ')');
         		$tweet.appendTo($body);
-        		index-=1;
+        		index++;
         	}
-        	last = holder;
         };
+        var index = 0, last;
         
-        var last = -1;
         displayNewTweets();
                 
         $('button').on('click', function() {
