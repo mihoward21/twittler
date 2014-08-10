@@ -11,14 +11,17 @@
     		font-family: "Times New Roman";
     		font-size: 16px;
     	}
+    	div li {
+    		display: inline;
+    	}
     	h1 {
     		font-size: 30px;
     		text-align: center;
     	}
     	button {
-    		margin-left: 710px;
+    		margin-left: 695px;
     		margin-top: 1px;
-    		width: 100px;
+    		width: 130px;
     		height: 35px;   
     		border-style: solid;
     		border-color: black;   
@@ -41,13 +44,25 @@
         	while(index < last){
         		var tweet = streams.home[index];
         		var $tweet = $('<div></div>');
-        		$tweet.text('@' + tweet.user + ': ' + tweet.message + ' (' + tweet.created_at + ')');
+        		
+        		var $name = $('<li class=.username></li>');
+        		$name.text('@' + tweet.user);
+        		$name.appendTo($tweet);
+        		
+        		var $message = $('<li class=.message></li>');
+        		$message.text(': ' + tweet.message);
+        		$message.appendTo($tweet);
+        		
+        		var $timeStamp= $('<li class=.timestamp></li>');
+        		$timeStamp.text(' (' + tweet.created_at + ')');
+        		$timeStamp.appendTo($tweet);
+        		
         		$tweet.appendTo($body);
         		index++;
         	}
         };
-        var index = 0, last;
         
+        var index = 0, last;
         displayNewTweets();
                 
         $('button').on('click', function() {
