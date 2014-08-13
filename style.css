@@ -1,20 +1,26 @@
 body {
-   		background-color: #81DAF5
+   		background-image: url("http://www.metoffice.gov.uk/media/image/j/i/Cumulus_2.jpg");
 }
 div {
    		font-family: "Times New Roman";
-   		font-size: 16px;
-		border-width: 1px;
+   		font-size: 20px;
+		border-width: 2px;
 		border-style: groove;
 		border-color: #B2CCCC;
+		background-color: white;
+		margin-left: 150px;
+		display: inline;
 }
 div span.username {
-   		font-size: 20px;
+   		font-size: 30px;
    		font-weight: bold;
 }
+div span.timestamp {
+		font-size: 12px;
+}
 h1 {
-   		font-size: 30px;
-   		margin-left: 707px;
+   		font-size: 50px;
+   		margin-left: 675px;
 }
 button {
    		margin-left: 695px;
