@@ -3,32 +3,8 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
-    <style>
-    	body {
-    		background-color: #81DAF5
-    	}
-    	div {
-    		font-family: "Times New Roman";
-    		font-size: 16px;
-    	}
-    	div li {
-    		display: inline;
-    	}
-    	h1 {
-    		font-size: 30px;
-    		text-align: center;
-    	}
-    	button {
-    		margin-left: 695px;
-    		margin-top: 1px;
-    		width: 130px;
-    		height: 35px;   
-    		border-style: solid;
-    		border-color: black;   
-    		font-size:14px;
-    		font-weight:700;
-    	}
-    </style>
+    <title>Twittler</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
   	<h1>Twittler</h1> 
@@ -45,15 +21,15 @@
         		var tweet = streams.home[index];
         		var $tweet = $('<div></div>');
         		
-        		var $name = $('<li class=.username></li>');
+        		var $name = $('<span class="username"></span>');
         		$name.text('@' + tweet.user);
         		$name.appendTo($tweet);
         		
-        		var $message = $('<li class=.message></li>');
+        		var $message = $('<span class="message"></span>');
         		$message.text(': ' + tweet.message);
         		$message.appendTo($tweet);
         		
-        		var $timeStamp= $('<li class=.timestamp></li>');
+        		var $timeStamp= $('<span class="timestamp"></span>');
         		$timeStamp.text(' (' + tweet.created_at + ')');
         		$timeStamp.appendTo($tweet);
         		

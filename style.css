@@ -1,0 +1,25 @@
+body {
+   		background-color: #81DAF5
+}
+div {
+   		font-family: "Times New Roman";
+   		font-size: 16px;
+}
+div span.username {
+   		font-size: 20px;
+   		font: bold;
+}
+h1 {
+   		font-size: 30px;
+   		text-align: center;
+}
+button {
+   		margin-left: 695px;
+   		margin-top: 1px;
+   		width: 130px;
+   		height: 35px;
+   		border-style: solid;
+   		border-color: black;
+   		font-size:14px;
+   		font-weight:700;
+}
